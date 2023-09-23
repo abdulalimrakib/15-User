@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse,faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 const UserPrfile = (props) => {
   const userData = props.allUser;
-  console.log(userData);
+  
   return (
     <div className="flex justify-between py-5 ml-10 border-b-2 border-r-2 pr-8">
       <div className="flex gap-8">
@@ -20,7 +21,7 @@ const UserPrfile = (props) => {
         </div>
       </div>
       <div className="flex items-center">
-        <button className="bg-blue-500 rounded-lg px-4 py-1 font-medium">add friend <FontAwesomeIcon className="px-1" icon={faUserPlus}/></button>
+        <button onClick={() => props.addhandling(userData)} className="bg-blue-500 rounded-lg px-4 py-1 font-medium">add friend <FontAwesomeIcon className="px-1" icon={faUserPlus}/></button>
       </div>
     </div>
   );
